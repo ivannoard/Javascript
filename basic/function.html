@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Function
+        // Membuat function biasa
+        function myName() {
+            console.log("Ivan Ardiansyah");
+        }
+
+        myName();
+
+        // Function Parameter
+        function greeting(name) {
+            console.log(`Halo, ${name}`);
+        }
+
+        greeting("There");
+
+        // function return value
+        function sumPlus(a, b) {
+            return a + b;
+        }
+
+        const tambah = sumPlus(5, 10);
+        console.log(tambah);
+
+        // function default parameter
+        function nama(nama = "Doe") {
+            console.log(`Halo, ${nama}`);
+        }
+
+        const fname = nama();
+
+        // Rest Paramter
+        function hitung(...numbers) {
+            let total = 0;
+            for (const angka of numbers) {
+                total += angka
+            }
+            return total;
+        }
+
+        const jumlah = hitung(1, 2, 3, 4, 5);
+        console.log(jumlah);
+
+        // Spread Operator
+        function spreadOP(...numbers) {
+            let total = 0;
+            for (const angka of numbers) {
+                total += angka;
+            }
+            console.log(total);
+        }
+
+        const array = [1, 2, 3, 4, 5, 6];
+        const spreading = spreadOP(...array);
+
+        // Function as Value
+        // seperti mengubah nama function
+
+        function sayHello(nama) {
+            console.log(`Halo ${nama}`);
+        }
+
+        const ivan = sayHello;
+        ivan("ivan");
+
+        // Anonymous Function
+        // Function tanpa Nama
+
+        const myFunction = function () {
+            return `This is My Function Method`;
+        }
+
+        console.log(myFunction());
+
+        // Anonymous Function as Parameter
+        function giveMeName(callback) {
+            callback("IVAN");
+        }
+
+        giveMeName(function (nama) {
+            console.log(`haloo ${nama}`);
+        });
+
+    </script>
+
+</body>
+
+</html>

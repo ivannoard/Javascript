@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Tipe Data Number
+
+        // Dalam JS tipe data seperti Integer dan Float dijadikan 1 menjadi Number
+        document.writeln("Ini adalah tipe data Number dalam JS");
+        document.writeln("<br>");
+        document.writeln(10); // Tipe data Number
+        document.writeln("<br>");
+        document.writeln(10.24) // Tipe data Number
+        document.writeln("<br>");
+
+        // Tipe data Boolean
+        document.writeln("Ini adalah tipe data Boolean dalam JS");
+        document.writeln("<br>");
+        document.writeln(true);
+        document.writeln("<br>");
+        document.writeln(false);
+        document.writeln("<br>");
+
+        // Tipe data String
+        document.writeln("ini adalah tipe data string");
+        document.writeln("<br>");
+        document.writeln("Ivan " + "Nova " + "Ardiansyah");
+        document.writeln("<br>");
+        // Escape Character \n \t \' \" \\
+
+        // Tipe data Array
+        let lst = [];
+        lst = ["Ivan", "Nova", "Ardiansyah", 1, 1.23, true, false];
+
+        // mengakses array dengan index
+        console.info("TIPE DATA ARRAY");
+        console.info(lst[0]);
+        console.info(lst[1]);
+        console.info(lst[2]);
+
+        // Mencetak panjang array
+        console.info(lst.length);
+
+        // Menambah data array
+        lst.push("Halo", "Programmer");
+
+        // Mencetak 1 Array
+        console.info(lst);
+
+        // Mengupdate nilai array
+        lst[0] = "Kenshin";
+        console.info(lst);
+
+        // Menghapus nilai array
+        delete lst[1]; // akan menghapus nilai dari array namun tidak benar" menghapus nilainya
+
+        // Tipe data Object
+        let obj = {
+            nama: "Ivan Nova Ardiansyah",
+            prodi: "Teknik Informatika",
+            semester: 5
+        }
+
+        console.info("TIPE DATA OBJECT");
+        // Mengakses nilai object dengan key valude
+        console.info(obj.nama);
+        console.info(obj.prodi);
+        console.info(obj.semester);
+
+        // Menampilkan array dalam tabel
+        console.table(obj);
+
+        // Mengupdate nilai object
+        obj.nama = "Dea Ayu Saputri";
+        console.table(obj);
+
+        // Menambah nilai obj
+        obj.laptop = "Lenovo";
+        console.table(obj);
+
+        // Menghapus nilai obj
+        delete obj.prodi;
+        console.table(obj);
+
+        // KONVERSI TIPE DATA
+        /*
+            JS membuat 4 tipe KONVERSI
+            1. parseInt -> mengambil nilai terdepan tidak terjadi pembulatan dari string ke Int
+            2. parseFloat -> membuat nilai float dari string ke Int
+            3. Number -> by default sama seperti parseFloat
+            4. toString -> mengubah nilai number ke string
+
+            jika terdapat kata di dalam huruf maka akan diambil nilai terdepan dan menghiraukan kata yang ada
+
+            Jika konversi bukan termasuk dari number maka akan mengembalikan nilai NaN
+        */
+
+        let nilai1 = 14.24;
+        let sNilai = "satu";
+        let sNilai2 = "24";
+
+        document.writeln(nilai1.toString());
+        document.writeln("<br>");
+        document.writeln(parseInt(sNilai)); // NaN
+        document.writeln("<br>");
+        document.writeln(parseInt(sNilai2));
+        document.writeln("<br>");
+
+        // Null adalah sebuah tipe data kosong dan tidak akan terjadi undefined
+
+        let kosong = null;
+        let unkosong;
+
+        console.info(kosong);
+        console.info(unkosong);
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        class MathUtil {
+            static sum(...numbers) {
+
+                if (numbers.length === 0) {
+                    throw new Error("Harus ada lebih dari 0 parameter")
+                }
+
+                let total = 0
+                for (const number of numbers) {
+                    total += number
+                }
+                return total
+            }
+        }
+
+        /*
+            try catch akan menjalankan program dimana jika tidak terjadi error
+            maka blok try akan dieksekusi
+            jika terjadi error maka blok try akan berhenti dan akan masuk ke blok catch
+            dan menampilkan pesan error dari parameter serta method bawaan .message
+            blok finally akan terus dieksekusi baik itu terjadi error ataupun tidak
+        */
+
+        try {
+            const hitung = MathUtil.sum()
+            console.log("haloo from try");
+        } catch (err) {
+            console.log(`Terjadi error : ${err.message}`);
+        } finally {
+            console.log("halo from finally");
+        }
+
+        const sum = MathUtil.sum(1, 1, 1)
+        console.log(sum);
+
+    </script>
+
+</body>
+
+</html>

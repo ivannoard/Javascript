@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        /*
+            Class Employee merupakan kelas induk yang menurunkan segala isinya dan class Manager merupakan class anak. 
+            Yang berarti bahwa class Manager akan mewarisi semua yang dimiliki oleh class induk (class Employee)
+            parameter dalam class anak harus menyesuaikan parameter class induk
+        */
+
+        function Employee(fname) {
+            this.fname = fname
+            this.sayHello = function (name) {
+                console.log(`Heelo ${name} my name is ${this.fname}`);
+            }
+        }
+
+        function Manager(fname, lname) {
+            Employee.call(this, fname)
+            this.lname = lname
+        }
+
+        const ivan = new Manager("ivan", "ardiansyah")
+        ivan.sayHello("Budi")
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function Employee(fname) {
+            this.fname = fname
+        }
+
+        function Manager(fname) {
+            this.fname = fname
+        }
+
+        Manager.prototype = Object.create(Employee.prototype)
+
+        Manager.prototype.sayHello = function (name) {
+            console.log(`Hello ${name} i'm manager ${this.fname} `);
+        }
+
+        Employee.prototype.sayHello = function (name) {
+            console.log(`Hello ${name} i'm employee ${this.fname} `);
+        }
+
+        const budi = new Manager("budi")
+        const joko = new Employee("joko")
+
+        budi.sayHello("eko")
+        joko.sayHello("eko")
+
+    </script>
+
+</body>
+
+</html>

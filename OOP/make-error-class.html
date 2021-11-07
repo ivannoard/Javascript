@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        class ValidationError extends Error {
+            constructor(message, field) {
+                super(message)
+                this.field = field
+            }
+        }
+
+        class MathUtil {
+            static sum(...numbers) {
+
+                if (numbers.length === 0) {
+                    throw new ValidationError("Harus ada lebih dari 0 parameter", "numbers")
+                }
+
+                let total = 0
+                for (const number of numbers) {
+                    total += number
+                }
+                return total
+            }
+        }
+
+        /*
+            try catch akan menjalankan program dimana jika tidak terjadi error
+            maka blok try akan dieksekusi
+            jika terjadi error maka blok try akan berhenti dan akan masuk ke blok catch
+            dan menampilkan pesan error dari parameter serta method bawaan .message
+            blok finally akan terus dieksekusi baik itu terjadi error ataupun tidak
+        */
+
+        try {
+            const hitung = MathUtil.sum()
+            console.log("haloo from try");
+        } catch (err) {
+            if (err instanceof ValidationError) {
+                console.log(`Terjadi error di field ${err.field} dengan error ${err.message}`);
+            } else {
+                console.log(`Terjadi error : ${err.message}`);
+            }
+        } finally {
+            console.log("halo from finally");
+        }
+
+        const sum = MathUtil.sum(1, 1, 1)
+        console.log(sum);
+
+    </script>
+
+</body>
+
+</html>

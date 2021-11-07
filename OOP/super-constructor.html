@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Employee {
+
+            constructor(fname) {
+                this.fname = fname;
+            }
+
+            sayHello(name) {
+                console.log(`Halo ${name} aku employee ${this.fname}`);
+            }
+        }
+
+        class Manager extends Employee {
+
+            constructor(fname, lname) {
+                super(fname);
+                this.lname = lname;
+            }
+
+            sayHello(name) {
+                console.log(`Halo ${name} aku manager ${this.fname} ${this.lname}`);
+            }
+        }
+
+        const budi = new Employee("Budi");
+        budi.sayHello("tika");
+
+        const ivan = new Manager("Ivan", "Ardiansyah");
+        ivan.sayHello("tika")
+
+    </script>
+
+</body>
+
+</html>

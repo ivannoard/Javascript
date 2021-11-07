@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Biografi {
+            static name = "ivan"
+            static age = 21
+        }
+
+        /* 
+            static membuat object tidak dapat mengakses property dari class
+            sehingga static membuat property menjadi miliknya sendiri
+            cara mengakses static property adalah dengan cara memanggil class serta propertynya
+        */
+
+        const ivan = new Biografi()
+        console.log(Biografi.age);
+        console.log(Biografi.name);
+
+    </script>
+
+</body>
+
+</html>

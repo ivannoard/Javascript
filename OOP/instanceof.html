@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Employee {
+            constructor(fname, lname) {
+                this.fname = fname
+                this.lname = lname
+            }
+            greeting() {
+                console.log(`${this.fname} adalah seorang employee`);
+            }
+        }
+
+        class Manager extends Employee {
+            constructor(fname, lname) {
+                super()
+            }
+            greeting() {
+                console.log(`${this.fname} adalah seorang manager`);
+            }
+        }
+
+        const ivan = new Manager()
+        const budi = new Employee()
+
+        console.log(ivan instanceof Manager);
+        console.log(ivan instanceof Employee);
+
+        console.log(budi instanceof Manager);
+        console.log(budi instanceof Employee);
+
+    </script>
+
+</body>
+
+</html>
